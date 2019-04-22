@@ -1,0 +1,57 @@
+@import "mixins/mixins";
+@import "common/var";
+@import "common/transition";
+
+@include b(collapse) {
+  border-bottom: 1px solid $--collapse-border-color;
+  margin-bottom: 16px;
+}
+@include b(collapse-item) {
+  @include e(header) {
+    display: flex;
+    align-items: center;
+    height: $--collapse-header-height;
+    line-height: 1;
+    background-color: $--collapse-header-fill;
+    color: $--collapse-header-color;
+    cursor: pointer;
+    border-bottom: 1px solid $--collapse-border-color;
+    font-size: $--collapse-header-size;
+    font-weight: bold;
+    transition: border-bottom-color .3s;
+    outline: none;
+    padding-left: 16px;
+    @include e(arrow) {
+      margin: 0 16px 0 auto;
+      transition: transform .3s;
+      font-weight: 500;
+      @include when(active) {
+        transform: rotate(90deg);
+      }
+    }
+    &.focusing:focus:not(:hover){
+      color: $--color-primary;
+    }
+    @include when(active) {
+      border-bottom-color: transparent;
+    }
+  }
+
+  @include e(wrap) {
+    will-change: height;
+    background-color: $--collapse-content-fill;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-bottom: 1px solid $--collapse-border-color;
+  }
+
+  @include e(content) {
+    padding: 0 16px 16px 16px;
+    font-size: $--collapse-content-size;
+    color: $--collapse-content-color;
+  }
+
+  &:last-child {
+    margin-bottom: -1px;
+  }
+}

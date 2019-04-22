@@ -1,0 +1,134 @@
+@import './../styles/theme/common/var.scss';
+
+.content-options {
+  padding: 24px 16px 24px 16px;
+  background-color: $--color-white;
+
+  .header {
+    text-align: center;
+
+    h2 {
+      font-size: $--font-size-big;
+      line-height: 28px;
+      margin: 0;
+    }
+  }
+}
+
+.responsive-block {
+  flex-wrap: wrap;
+
+  .settings-column {
+    flex-basis: 250px;
+    flex-grow: 1;
+    margin-right: 100px;
+    max-width: 350px;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+.subtitle {
+  margin-top: 0;
+  margin-bottom: 32px;
+  text-align: center;
+  line-height: $--font-line-height-medium;
+}
+
+.option-title {
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 24px;
+  line-height: $--font-line-height-primary;
+}
+
+span {
+  font-size: $--font-size-small;
+  display: inline-block;
+  line-height: $--font-line-height-medium;
+}
+
+.cost {
+  line-height: $--font-line-height-primary;
+  width: 300px;
+}
+
+/deep/ .el-checkbox {
+  margin-bottom: 0;
+
+  &__label {
+    font-size: $--font-size-small;
+    line-height: $--font-line-height-medium;
+  }
+}
+
+.paid-title,
+.lang-title {
+  line-height: $--font-line-height-medium;
+  color: $--color-text-secondary;
+  font-size: $--font-size-small;
+}
+
+
+.language-block {
+  margin: 12px 0 24px 0;
+  font-size: $--font-size-small;
+}
+
+.price-input {
+  margin: 15px 0 32px 0;
+  font-size: $--font-size-small;
+}
+
+.visa-price-input {
+  /deep/ .price-title {
+    width: 200px;
+  }
+}
+
+.lang {
+  margin-bottom: 8px;
+  line-height: $--font-line-height-medium;
+}
+
+.el-button {
+  &.btn-delete-lang {
+    padding: 0;
+    border: none;
+  }
+}
+
+.sm,
+.md,
+.lg {
+  .subtitle {
+    text-align: left;
+    margin-bottom: 12px;
+  }
+
+  .responsive-block {
+    .settings-column {
+      margin-right: 0;
+    }
+  }
+
+  .option-title {
+    margin-top: 12px;
+  }
+}
+
+.sign-currency {
+  margin-right: 4px;
+}
+
+.cash {
+  .el-checkbox-button {
+    margin: 6px 16px 10px 0;
+  }
+
+  .el-checkbox-button:not(:first-child) {
+    border-left: 1px solid $--color-border-bottom;
+  }
+}
